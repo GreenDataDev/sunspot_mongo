@@ -57,11 +57,11 @@ module Sunspot
       end
 
       def load(id)
-        scope.find(id)
+        scope.find(id.to_i)
       end
 
       def load_all(ids)
-        scope.find(ids)
+        scope.find(ids.map{|x| x.to_i})
       end
 
       def scope
