@@ -57,15 +57,11 @@ module Sunspot
       end
 
       def load(id)
-        if id.to_i.to_s == id
-          scope.find(id.to_i)
-        else
-          scope.find(id)
-        end
+        scope.find(id.to_i)
       end
 
       def load_all(ids)
-        scope.find(ids.map{|x| x.to_i.to_s == x ? x.to_i : x })
+        scope.find(ids.map{|x| x.to_i })
       end
 
       def scope
